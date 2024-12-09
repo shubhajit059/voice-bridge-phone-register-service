@@ -1,0 +1,12 @@
+services:
+  phone-cmd-api:
+    environment:
+      - "SPRING_PROFILES_ACTIVE=test"  # Local profile
+    ports:
+      - "9192:9192"  # Local port mapping
+
+  phone-query-api:
+    environment:
+      - "SPRING_PROFILES_ACTIVE=test"  # Local profile
+    ports:
+      - "9193:9193"  # Local port mapping

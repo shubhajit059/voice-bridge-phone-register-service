@@ -1,0 +1,27 @@
+services:
+  phone-cmd-api:
+    build:
+      context: ..
+      dockerfile: ./phone.cmd.api/Dockerfile
+    ports:
+      - "9192:9192"
+    networks:
+      - axon-server_axon-test
+    profiles:
+      - cmd
+
+  phone-query-api:
+    build:
+      context: ..
+      dockerfile: ./phone.query.api/Dockerfile
+    ports:
+      - "9193:9193"
+    networks:
+      - axon-server_axon-test
+    profiles:
+      - query
+
+networks:
+  axon-server_axon-test:
+    driver: bridge
+    external: true

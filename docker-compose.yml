@@ -1,0 +1,33 @@
+services:
+  axon-server:
+    image: axoniq/axonserver:latest
+    container_name: axon-server
+    environment:
+      - 'AXONIQ_AXONSERVER_STANDALONE=TRUE'
+    ports:
+      - "8024:8024"
+      - "8124:8124"
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo-container
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data_container:/data/db
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres-container
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: phone-database
+    volumes:
+      - postgres_data_container:/var/lib/postgresql/data
+
+volumes:
+  mongodb_data_container:
+  postgres_data_container:
