@@ -19,7 +19,7 @@ This is a Spring Boot application that provides a REST API for phone registratio
 - **Description**: Registers a phone with the provided JSON data.
 
 #### Register Phone Api (method: POST)
-```json
+```agsl
 curl --location 'http://localhost:8081/api/phone/register' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -32,17 +32,17 @@ curl --location 'http://localhost:8081/api/phone/register' \
 ```
 
 #### Get All Phones(method: GET)
-```json
+```agsl
 curl --location 'http://localhost:8082/api/queries/phones'
 ```
 
 #### Get Phone [According to phoneNumberId] (method: GET)
-```json
+```agsl
 curl --location 'http://localhost:8082/api/queries/phone/0b54ffbe-c704-4e57-a037-9d6867cb1f3f'
 ```
 
 #### Get Phone [According to phoneNumber] (method: GET)
-```json
+```agsl
 curl --location 'http://localhost:8082/api/queries/phone/number?phoneNumber=1234567891'
 ```
 #### How to Run
